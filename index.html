@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Pure React</title>
+    <link type="text/css" rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<div id="root"></div>
+<!-- Load React. -->
+<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="./cards.js"></script>
+<!-- Load our React component. -->
+<script crossorigin type="text/babel" data-presets="es2015, react">
+
+	class App extends React.Component {
+		constructor(props) {
+			super(props);
+
+			this.state = {
+				cards: cards
+			}
+		}
+
+		componentDidMount() {
+        console.log(cards);
+		}
+
+		render() {
+			return (
+				<h1>Hello, world!</h1>
+			)
+		}
+	}
+
+
+	ReactDOM.render(
+		<App/>,
+		document.getElementById('root')
+	);
+
+</script>
+
+</body>
+</html>
